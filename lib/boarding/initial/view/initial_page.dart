@@ -1,4 +1,4 @@
-import 'package:dividely/common_widgets/blue_button.dart';
+import 'package:dividely/common_widgets/buttons/blue_button.dart';
 import 'package:flutter/material.dart';
 
 class InitialPage extends StatelessWidget {

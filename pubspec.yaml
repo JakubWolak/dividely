@@ -45,3 +45,4 @@ flutter:
           style: normal
   assets:
     - assets/images/wallet.png
+    - assets/images/scan_qr_code.png
