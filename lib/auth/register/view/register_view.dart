@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../common_widgets/buttons/login_method_button.dart';
+import '../../../common_widgets/inputs/text_input.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -118,73 +119,15 @@ class _RegisterViewState extends State<RegisterView> {
             const SizedBox(
               height: 12,
             ),
-            TextField(
-              key: Key('${_emailFocus.hasFocus}'),
-              autocorrect: false,
-              autofocus: true,
-              focusNode: _emailFocus,
-              keyboardType: TextInputType.emailAddress,
-              controller: _emailController,
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: const Color.fromRGBO(245, 246, 250, 1),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide.none,
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  borderSide: const BorderSide(
-                    color: Color.fromRGBO(49, 75, 206, 1),
-                    width: 2,
-                  ),
-                ),
-                hintText: 'Email',
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
-              ),
-              style: _emailFocus.hasFocus ? TextStyle(
-                fontFamily: 'Inter',
-                fontSize: 16,
-                color: Colors.blue,
-              ) : TextStyle(
-                fontFamily: 'Inter',
-                fontSize: 16,
-                color: Colors.black,
-              ),
-            ),
+            const TextInput.email(hintText: 'Email'),
             const SizedBox(
               height: 12,
             ),
-            TextField(
-              autocorrect: false,
-              autofocus: true,
-              keyboardType: TextInputType.emailAddress,
-              obscureText: true,
-              decoration: InputDecoration(
-                filled: true,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide.none,
-                ),
-                fillColor: const Color.fromRGBO(245, 246, 250, 1),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  borderSide: const BorderSide(
-                    color: Color.fromRGBO(49, 75, 206, 1),
-                    width: 2,
-                  ),
-                ),
-                hintText: 'Password',
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
-              ),
-              style: const TextStyle(
-                fontFamily: 'Inter',
-                fontSize: 16,
-                color: Colors.black87,
-              ),
+            const TextInput.password(hintText: 'Password'),
+            const SizedBox(
+              height: 12,
             ),
+            const TextInput.password(hintText: 'Repeat password'),
           ],
         ),
       ),
