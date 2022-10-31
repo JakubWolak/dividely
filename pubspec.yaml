@@ -46,3 +46,5 @@ flutter:
   assets:
     - assets/images/wallet.png
     - assets/images/scan_qr_code.png
+    - assets/images/make_payment.png
+    - assets/images/get_access.png

@@ -1,13 +1,4 @@
-// Copyright (c) 2022, Very Good Ventures
-// https://verygood.ventures
-//
-// Use of this source code is governed by an MIT-style
-// license that can be found in the LICENSE file or at
-// https://opensource.org/licenses/MIT.
-
-import 'package:dividely/boarding/initial/initial.dart';
 import 'package:dividely/boarding/introduction/introduction.dart';
-import 'package:dividely/counter/counter.dart';
 import 'package:dividely/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -29,7 +20,7 @@ class App extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const StepOnePage(),
+      home: const IntroductionPage(),
     );
   }
 }
