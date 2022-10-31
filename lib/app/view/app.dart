@@ -20,7 +20,7 @@ class App extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const IntroductionPage(),
+      home: const WelcomeView(),
     );
   }
 }

@@ -4,14 +4,14 @@ import 'package:dividely/boarding/introduction/pages/step_two_page.dart';
 import 'package:dividely/common_widgets/buttons/blue_circular_button.dart';
 import 'package:flutter/material.dart';
 
-class IntroductionPage extends StatefulWidget {
-  const IntroductionPage({super.key});
+class IntroductionView extends StatefulWidget {
+  const IntroductionView({super.key});
 
   @override
-  _IntroductionPageState createState() => _IntroductionPageState();
+  _IntroductionViewState createState() => _IntroductionViewState();
 }
 
-class _IntroductionPageState extends State<IntroductionPage>
+class _IntroductionViewState extends State<IntroductionView>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 

@@ -48,3 +48,5 @@ flutter:
     - assets/images/scan_qr_code.png
     - assets/images/make_payment.png
     - assets/images/get_access.png
+    - assets/images/welcome.png
+    - assets/images/continue_button_arrow.png
