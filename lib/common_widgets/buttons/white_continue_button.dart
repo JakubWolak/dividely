@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class WhiteContinueButton extends StatelessWidget {
@@ -15,7 +14,7 @@ class WhiteContinueButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
           minimumSize: const Size.fromRadius(47),
           backgroundColor: Colors.white,
-          shadowColor: Colors.black54,
+          shadowColor: Colors.black87,
           elevation: 15,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(47))),

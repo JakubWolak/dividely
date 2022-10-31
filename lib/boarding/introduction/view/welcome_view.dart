@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:dividely/common_widgets/buttons/white_continue_button.dart';
 import 'package:flutter/material.dart';
-
-import '../../../common_widgets/buttons/white_continue_button.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({super.key});
@@ -29,9 +27,10 @@ class WelcomeView extends StatelessWidget {
                 Text(
                   'Welcome',
                   style: TextStyle(
-                      fontSize: 44,
-                      color: Colors.white,
-                      fontFamily: 'GilroyBold'),
+                    fontSize: 44,
+                    color: Colors.white,
+                    fontFamily: 'GilroyBold',
+                  ),
                 ),
                 SizedBox(
                   height: 15,
@@ -49,7 +48,7 @@ class WelcomeView extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Padding(
         padding: EdgeInsets.only(bottom: 30),
-        child:  WhiteContinueButton(onPressed: () {}),
+        child: WhiteContinueButton(onPressed: () {}),
       ),
     );
   }

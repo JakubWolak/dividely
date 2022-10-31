@@ -8,7 +8,7 @@ class IntroductionView extends StatefulWidget {
   const IntroductionView({super.key});
 
   @override
-  _IntroductionViewState createState() => _IntroductionViewState();
+  State<IntroductionView> createState() => _IntroductionViewState();
 }
 
 class _IntroductionViewState extends State<IntroductionView>

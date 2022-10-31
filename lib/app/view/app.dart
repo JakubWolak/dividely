@@ -1,4 +1,4 @@
-import 'package:dividely/boarding/introduction/introduction.dart';
+import 'package:dividely/auth/register/register.dart';
 import 'package:dividely/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -20,7 +20,7 @@ class App extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const WelcomeView(),
+      home: const RegisterView(),
     );
   }
 }
