@@ -3,6 +3,7 @@ import 'package:dividely/common_widgets/inputs/text_input.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dividely/common_widgets/buttons/login_method_button.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class ConfirmPhoneView extends StatefulWidget {
   const ConfirmPhoneView({super.key});
@@ -26,7 +27,7 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
             top: 90,
             left: 40,
             right: 40,
-            bottom: 40,
+            bottom: 30,
           ),
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -76,52 +77,100 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
             const SizedBox(
               height: 12,
             ),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: const [
-                  BoxShadow(
-                    color: Color.fromRGBO(0, 0, 0, 0.1),
-                    blurRadius: 15,
-                    offset: Offset(0, 6),
+            GestureDetector(
+              onTap: () {
+                showMaterialModalBottomSheet(
+                  context: context,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(25),
+                      topRight: Radius.circular(25),
+                    ),
                   ),
-                ],
-                borderRadius: BorderRadius.circular(5),
-              ),
-              height: 53,
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: const [
-                      Image(
-                        image: AssetImage('assets/images/temporary/flag.png'),
+                  builder: (context) => SingleChildScrollView(
+                    controller: ModalScrollController.of(context),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 50,
                       ),
-                      SizedBox(
-                        width: 14,
+                      child: Row(
+                        children: const [
+                          Image(
+                            image:
+                                AssetImage('assets/images/temporary/flag.png'),
+                          ),
+                          SizedBox(
+                            width: 14,
+                          ),
+                          VerticalDivider(
+                            color: Colors.black26,
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Text(
+                            'Poland',
+                            style: TextStyle(
+                              fontFamily: 'Inter',
+                              fontSize: 14,
+                              color: Colors.black54,
+                            ),
+                          ),
+                        ],
                       ),
-                      VerticalDivider(
-                        color: Colors.black26,
-                      ),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        'Poland',
-                        style: TextStyle(
-                          fontFamily: 'Inter',
-                          fontSize: 14,
-                          color: Colors.black54,
+                    ),
+                  ),
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color.fromRGBO(0, 0, 0, 0.1),
+                      blurRadius: 15,
+                      offset: Offset(0, 6),
+                    ),
+                  ],
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                height: 53,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: const [
+                        Image(
+                          image: AssetImage('assets/images/temporary/flag.png'),
                         ),
-                      ),
-                    ],
-                  ),
-                  const Icon(
-                    Icons.keyboard_arrow_down,
-                    size: 22,
-                  )
-                ],
+                        SizedBox(
+                          width: 14,
+                        ),
+                        VerticalDivider(
+                          color: Colors.black26,
+                        ),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Text(
+                          'Poland',
+                          style: TextStyle(
+                            fontFamily: 'Inter',
+                            fontSize: 14,
+                            color: Colors.black54,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Icon(
+                      Icons.keyboard_arrow_down,
+                      size: 22,
+                    )
+                  ],
+                ),
               ),
             ),
             const SizedBox(
@@ -206,7 +255,9 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
               ],
             ),
             // const Spacer(),
-            const SizedBox(height: 40,),
+            const SizedBox(
+              height: 40,
+            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
