@@ -86,7 +86,7 @@ class _RegisterViewState extends State<RegisterView> {
                   child: Container(
                     margin: const EdgeInsets.only(left: 60, right: 18),
                     child: const Divider(
-                      color: Colors.black38,
+                      color: Colors.black26,
                       height: 36,
                     ),
                   ),
@@ -96,14 +96,14 @@ class _RegisterViewState extends State<RegisterView> {
                   style: TextStyle(
                     fontSize: 15,
                     fontFamily: 'SourceSansProBold',
-                    color: Colors.black45,
+                    color: Colors.black38,
                   ),
                 ),
                 Expanded(
                   child: Container(
                     margin: const EdgeInsets.only(left: 18, right: 60),
                     child: const Divider(
-                      color: Colors.black45,
+                      color: Colors.black26,
                       height: 36,
                     ),
                   ),
