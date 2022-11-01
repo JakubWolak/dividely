@@ -20,7 +20,8 @@ class App extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const RegisterView(),
+      home: const ConfirmPhoneView(),
+      // home: const RegisterView(),
     );
   }
 }
