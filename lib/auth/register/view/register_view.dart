@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../common_widgets/buttons/big_button.dart';
 import '../../../common_widgets/buttons/login_method_button.dart';
 import '../../../common_widgets/inputs/text_input.dart';
 
@@ -39,7 +40,7 @@ class _RegisterViewState extends State<RegisterView> {
           top: 90,
           left: 40,
           right: 40,
-          bottom: 45,
+          bottom: 40,
         ),
         color: Colors.white,
         child: Column(
@@ -148,7 +149,47 @@ class _RegisterViewState extends State<RegisterView> {
                   child: const Text(
                     "I've read and agree to terms of privacy policy",
                     style: TextStyle(
-                        fontSize: 12, fontFamily: 'Inter', color: Colors.black54),
+                        fontSize: 12,
+                        fontFamily: 'Inter',
+                        color: Colors.black54),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 80,
+            ),
+            BigButton(
+              text: 'Next',
+              onPressed: () {},
+              primaryColor: ButtonColor.orange,
+            ),
+            const Spacer(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Already have an account?',
+                  style: TextStyle(
+                      fontSize: 14, fontFamily: 'Inter', color: Colors.black87),
+                ),
+                TextButton.icon(
+                  onPressed: () {},
+                  icon: const Text('LOGIN'),
+                  label: const Icon(
+                    Icons.arrow_forward,
+                    size: 22,
+                  ),
+                  style: TextButton.styleFrom(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 5),
+                    backgroundColor: Colors.transparent,
+                    foregroundColor: const Color.fromRGBO(48, 75, 206, 1),
+                    textStyle: const TextStyle(
+                      fontSize: 16,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],
