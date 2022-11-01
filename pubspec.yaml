@@ -16,6 +16,7 @@ dependencies:
     sdk: flutter
   intl: ^0.17.0
   modal_bottom_sheet: ^2.1.2
+  sms_autofill: ^2.2.0
 
 dev_dependencies:
   bloc_test: ^9.1.0
@@ -43,6 +44,10 @@ flutter:
     - family: SourceSansProBold
       fonts:
         - asset: assets/fonts/SourceSansPro-Bold.ttf
+          style: normal
+    - family: Abel
+      fonts:
+        - asset: assets/fonts/Abel-Regular.ttf
           style: normal
   assets:
     - assets/images/wallet.png
