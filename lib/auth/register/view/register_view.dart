@@ -171,7 +171,10 @@ class _RegisterViewState extends State<RegisterView> {
                 const Text(
                   'Already have an account?',
                   style: TextStyle(
-                      fontSize: 14, fontFamily: 'Inter', color: Colors.black87),
+                    fontSize: 14,
+                    fontFamily: 'Inter',
+                    color: Colors.black87,
+                  ),
                 ),
                 TextButton.icon(
                   onPressed: () {},
@@ -181,8 +184,7 @@ class _RegisterViewState extends State<RegisterView> {
                     size: 22,
                   ),
                   style: TextButton.styleFrom(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 5),
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
                     backgroundColor: Colors.transparent,
                     foregroundColor: const Color.fromRGBO(48, 75, 206, 1),
                     textStyle: const TextStyle(

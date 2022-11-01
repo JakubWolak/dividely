@@ -1,9 +1,8 @@
 import 'package:dividely/common_widgets/buttons/big_button.dart';
 import 'package:dividely/common_widgets/inputs/text_input.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../common_widgets/buttons/login_method_button.dart';
+import 'package:dividely/common_widgets/buttons/login_method_button.dart';
 
 class ConfirmPhoneView extends StatefulWidget {
   const ConfirmPhoneView({super.key});
@@ -19,15 +18,17 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
       body: Container(
         width: double.infinity,
         height: MediaQuery.of(context).size.height,
-        padding: const EdgeInsets.only(
-          top: 90,
-          left: 40,
-          right: 40,
-          bottom: 40,
-        ),
         color: Colors.white,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
+          shrinkWrap: true,
+          reverse: true,
+          padding: const EdgeInsets.only(
+            top: 90,
+            left: 40,
+            right: 40,
+            bottom: 40,
+          ),
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
               'Register',
@@ -67,26 +68,75 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
             const Text(
               'Enter your location',
               style: TextStyle(
-                  fontFamily: "Inter",
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold),
+                fontFamily: 'Inter',
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            Card(
-              elevation: 15,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5)),
-              child: Text('elo'),
+            const SizedBox(
+              height: 12,
             ),
-            DropdownButton(items: [], onChanged: (_) {}),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color.fromRGBO(0, 0, 0, 0.1),
+                    blurRadius: 15,
+                    offset: Offset(0, 6),
+                  ),
+                ],
+                borderRadius: BorderRadius.circular(5),
+              ),
+              height: 53,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: const [
+                      Image(
+                        image: AssetImage('assets/images/temporary/flag.png'),
+                      ),
+                      SizedBox(
+                        width: 14,
+                      ),
+                      VerticalDivider(
+                        color: Colors.black26,
+                      ),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Text(
+                        'Poland',
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontSize: 14,
+                          color: Colors.black54,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Icon(
+                    Icons.keyboard_arrow_down,
+                    size: 22,
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 12,
+            ),
             const SizedBox(
               height: 26,
             ),
             const Text(
               'Enter your location',
               style: TextStyle(
-                  fontFamily: "Inter",
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold),
+                fontFamily: 'Inter',
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(
               height: 12,
@@ -133,7 +183,9 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
                 ),
               ],
             ),
-            const SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
             Row(
               children: [
                 Expanded(
@@ -153,7 +205,8 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
                 ),
               ],
             ),
-            const Spacer(),
+            // const Spacer(),
+            const SizedBox(height: 40,),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -170,8 +223,7 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
                     size: 22,
                   ),
                   style: TextButton.styleFrom(
-                    padding:
-                    const EdgeInsets.symmetric(horizontal: 5),
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
                     backgroundColor: Colors.transparent,
                     foregroundColor: const Color.fromRGBO(48, 75, 206, 1),
                     textStyle: const TextStyle(
@@ -183,7 +235,7 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
                 ),
               ],
             ),
-          ],
+          ].reversed.toList(),
         ),
       ),
     );
