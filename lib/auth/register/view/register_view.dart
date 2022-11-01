@@ -11,29 +11,22 @@ class RegisterView extends StatefulWidget {
 }
 
 class _RegisterViewState extends State<RegisterView> {
-  final FocusNode _emailFocus = FocusNode();
-  late TextEditingController _emailController;
+  bool _termsAccepted = false;
+
+  void _onCheckboxChanged(bool? selected) {
+    setState(() {
+      _termsAccepted = selected ?? false;
+    });
+  }
 
   @override
   void initState() {
-    _emailController = TextEditingController();
-
-    _emailFocus.addListener(_onFocusChange);
-
     super.initState();
-  }
-
-  void _onFocusChange() {
-    debugPrint('Focus: ${_emailFocus.hasFocus.toString()}');
   }
 
   @override
   void dispose() {
     super.dispose();
-
-    _emailFocus
-      ..removeListener(_onFocusChange)
-      ..dispose();
   }
 
   @override
@@ -128,6 +121,38 @@ class _RegisterViewState extends State<RegisterView> {
               height: 12,
             ),
             const TextInput.password(hintText: 'Repeat password'),
+            const SizedBox(
+              height: 14,
+            ),
+            Row(
+              children: [
+                Checkbox(
+                  onChanged: _onCheckboxChanged,
+                  value: _termsAccepted,
+                  checkColor: const Color.fromRGBO(255, 137, 126, 1),
+                  fillColor: MaterialStateColor.resolveWith(
+                    (states) => states.contains(MaterialState.selected)
+                        ? const Color.fromRGBO(255, 137, 126, 0.16)
+                        : const Color.fromRGBO(255, 137, 126, 1),
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4),
+                    // side: const BorderSide(
+                    //   color: Colors.red,
+                    //   width: 2,
+                    // ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () => _onCheckboxChanged(!_termsAccepted),
+                  child: const Text(
+                    "I've read and agree to terms of privacy policy",
+                    style: TextStyle(
+                        fontSize: 12, fontFamily: 'Inter', color: Colors.black54),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
