@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:dividely/common_widgets/buttons/back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -21,26 +19,25 @@ class PhoneConfirmationCode extends StatelessWidget {
       body: Container(
         width: double.infinity,
         height: MediaQuery.of(context).size.height,
-        padding: const EdgeInsets.only(
-          top: 170,
-          left: 40,
-          right: 40,
-          bottom: 40,
-        ),
         color: Colors.white,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
+          padding: const EdgeInsets.only(
+            top: 170,
+            left: 40,
+            right: 40,
+            bottom: 40,
+          ),
+          shrinkWrap: true,
           children: [
-            Text(
+            const Text(
               'Verify Code',
               style: TextStyle(
-                fontFamily: 'GiloryBold',
-                fontWeight: FontWeight.bold,
+                fontFamily: 'GilroyBold',
                 fontSize: 44,
                 color: Colors.black87,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             RichText(
@@ -73,11 +70,6 @@ class PhoneConfirmationCode extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
                 length: 4,
-                // obscureText: true,
-                // obscuringCharacter: '*',
-                // obscuringWidget: const FlutterLogo(
-                //   size: 24,
-                // ),
                 blinkWhenObscuring: true,
                 animationType: AnimationType.fade,
                 validator: (v) {
@@ -102,7 +94,7 @@ class PhoneConfirmationCode extends StatelessWidget {
                 cursorColor: Colors.black,
                 animationDuration: const Duration(milliseconds: 300),
                 enableActiveFill: true,
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                   fontSize: 40,
                   fontFamily: 'Abel',
                   color: Colors.white,
@@ -135,6 +127,46 @@ class PhoneConfirmationCode extends StatelessWidget {
                   //but you can show anything you want here, like your pop up saying wrong paste format or etc
                   return true;
                 },
+              ),
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            const Text(
+              '(00:52)',
+              style: TextStyle(
+                fontFamily: 'Inter',
+                fontSize: 13,
+                color: Color.fromRGBO(255, 137, 126, 1),
+              ),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            RichText(
+              text: const TextSpan(
+                style: TextStyle(
+                  fontFamily: 'Inter',
+                  fontSize: 13,
+                  color: Color.fromRGBO(72, 100, 132, 1),
+                ),
+                children: [
+                  TextSpan(
+                    text:
+                        "This session will end in 60 seconds.\nDidn't receive a code? ",
+                  ),
+                  TextSpan(
+                    text: 'Resend Code',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(255, 137, 126, 1),
+                      decoration: TextDecoration.underline,
+                      decorationColor: Color.fromRGBO(255, 137, 126, 1),
+                      decorationThickness: 2,
+                      decorationStyle: TextDecorationStyle.solid,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
