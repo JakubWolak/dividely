@@ -37,6 +37,7 @@ class CustomBackButton extends StatelessWidget {
         foregroundColor: Colors.black87,
         padding: EdgeInsets.zero,
         elevation: 12,
+        shadowColor: Colors.black38,
         minimumSize: const Size.square(48),
       ),
       child: const Icon(Icons.arrow_back, size: 21,),
