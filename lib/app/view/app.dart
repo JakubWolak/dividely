@@ -1,3 +1,4 @@
+import 'package:dividely/auth/login/view/login_view.dart';
 import 'package:dividely/auth/register/register.dart';
 import 'package:dividely/l10n/l10n.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class App extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const BoardingFinishedView(),
+      home: const LoginView(),
       // home: const ConfirmPhoneView(),
     );
   }

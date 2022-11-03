@@ -7,10 +7,12 @@ class TextInput extends StatefulWidget {
     TextInputType inputType = TextInputType.text,
     bool isObscure = false,
     bool autofocus = false,
+    bool showObscureButton = false,
   })  : _hintText = hintText,
         _inputType = inputType,
         _isObscure = isObscure,
-        _autofocus = autofocus;
+        _autofocus = autofocus,
+        _showObscureButton = showObscureButton;
 
   const TextInput.email({
     super.key,
@@ -19,7 +21,8 @@ class TextInput extends StatefulWidget {
   })  : _hintText = hintText,
         _inputType = TextInputType.emailAddress,
         _isObscure = false,
-        _autofocus = autofocus;
+        _autofocus = autofocus,
+        _showObscureButton = false;
 
   const TextInput.password({
     super.key,
@@ -28,12 +31,14 @@ class TextInput extends StatefulWidget {
   })  : _hintText = hintText,
         _inputType = TextInputType.text,
         _isObscure = true,
-        _autofocus = autofocus;
+        _autofocus = autofocus,
+        _showObscureButton = true;
 
   final String _hintText;
   final TextInputType _inputType;
   final bool _isObscure;
   final bool _autofocus;
+  final bool _showObscureButton;
 
   @override
   State<TextInput> createState() => _TextInputState();
@@ -43,8 +48,12 @@ class _TextInputState extends State<TextInput> {
   final FocusNode _inputFocus = FocusNode();
   bool _hasFocus = false;
 
+  bool _showPassword = false;
+
   @override
   void initState() {
+    _showPassword = !widget._isObscure;
+
     _inputFocus.addListener(_onFocusChange);
     super.initState();
   }
@@ -52,6 +61,12 @@ class _TextInputState extends State<TextInput> {
   void _onFocusChange() {
     setState(() {
       _hasFocus = _inputFocus.hasFocus;
+    });
+  }
+
+  void _togglePasswordVisibility() {
+    setState(() {
+      _showPassword = !_showPassword;
     });
   }
 
@@ -71,7 +86,7 @@ class _TextInputState extends State<TextInput> {
       autocorrect: false,
       autofocus: widget._autofocus,
       keyboardType: widget._inputType,
-      obscureText: widget._isObscure,
+      obscureText: !_showPassword,
       decoration: InputDecoration(
         filled: true,
         border: OutlineInputBorder(
@@ -89,6 +104,15 @@ class _TextInputState extends State<TextInput> {
         hintText: widget._hintText,
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+        suffixIcon: widget._showObscureButton
+            ? IconButton(
+                icon: Icon(
+                  _showPassword ? Icons.visibility_off : Icons.visibility,
+                  size: 22,
+                ),
+                onPressed: _togglePasswordVisibility,
+              )
+            : null,
       ),
       style: TextStyle(
         fontFamily: 'Inter',
