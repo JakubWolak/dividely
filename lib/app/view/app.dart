@@ -3,8 +3,6 @@ import 'package:dividely/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import '../../auth/register/view/phone_confirmation_code.dart';
-
 class App extends StatelessWidget {
   const App({super.key});
 
@@ -22,7 +20,7 @@ class App extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const PhoneConfirmationCode(),
+      home: const BoardingFinishedView(),
       // home: const ConfirmPhoneView(),
     );
   }

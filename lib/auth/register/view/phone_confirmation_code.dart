@@ -82,6 +82,7 @@ class PhoneConfirmationCode extends StatelessWidget {
                 pinTheme: PinTheme(
                   shape: PinCodeFieldShape.box,
                   borderRadius: BorderRadius.circular(10),
+                  borderWidth: 2,
                   fieldHeight: 70,
                   fieldWidth: 70,
                   activeFillColor: const Color.fromRGBO(49, 75, 206, 1),
