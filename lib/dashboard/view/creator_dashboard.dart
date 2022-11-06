@@ -538,7 +538,14 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                         ),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: const Text('Netflix'),
+                      child: const Text(
+                        'Netflix',
+                        style: TextStyle(
+                          fontFamily: 'GilroyBold',
+                          fontSize: 20,
+                          color: Colors.white,
+                        ),
+                      ),
                     );
                   },
                   separatorBuilder: (_, __) {
