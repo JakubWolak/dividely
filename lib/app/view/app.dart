@@ -22,7 +22,7 @@ class App extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const MemberDashboardView(),
+      home: const CreatorDashboardView(),
       // home: const ConfirmPhoneView(),
     );
   }

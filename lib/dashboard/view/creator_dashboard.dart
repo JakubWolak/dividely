@@ -1,4 +1,5 @@
 import 'package:dividely/common_widgets/buttons/shadow_icon_button.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class CreatorDashboardView extends StatefulWidget {
@@ -9,9 +10,47 @@ class CreatorDashboardView extends StatefulWidget {
 }
 
 class _CreatorDashboardState extends State<CreatorDashboardView> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: Drawer(
+        width: MediaQuery.of(context).size.width * 0.8,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomRight: Radius.circular(40),
+          ),
+        ),
+        child: Container(
+          width: double.infinity,
+          height: MediaQuery.of(context).size.height,
+          padding: const EdgeInsets.only(
+            left: 40,
+            right: 40,
+            top: 70,
+            bottom: 50,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TextButton(
+                onPressed: () => _scaffoldKey.currentState?.closeDrawer(),
+                style: TextButton.styleFrom(
+                  textStyle: const TextStyle(
+                    fontSize: 15,
+                    fontFamily: 'Inter',
+                  ),
+                  foregroundColor: Colors.black54,
+                ),
+                child: const Text('CLOSE'),
+              ),
+            ],
+          ),
+        ),
+      ),
+      drawerDragStartBehavior: DragStartBehavior.start,
       body: Container(
         width: double.infinity,
         height: MediaQuery.of(context).size.height,
@@ -32,7 +71,8 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                     children: [
                       ShadowIconButton(
                         icon: Icons.menu,
-                        onPressed: () {},
+                        onPressed: () =>
+                            _scaffoldKey.currentState?.openDrawer(),
                       ),
                       ShadowIconButton(
                         icon: Icons.remove_sharp,
