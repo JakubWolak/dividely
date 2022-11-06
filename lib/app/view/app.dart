@@ -1,8 +1,8 @@
-import 'package:dividely/auth/login/view/login_view.dart';
-import 'package:dividely/auth/register/register.dart';
 import 'package:dividely/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
+import '../../dashboard/view/creator_dashboard.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -21,7 +21,7 @@ class App extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const LoginView(),
+      home: const CreatorDashboardView(),
       // home: const ConfirmPhoneView(),
     );
   }

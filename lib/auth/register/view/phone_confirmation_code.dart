@@ -1,4 +1,4 @@
-import 'package:dividely/common_widgets/buttons/back_button.dart';
+import 'package:dividely/common_widgets/buttons/shadow_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 

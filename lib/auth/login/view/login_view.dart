@@ -26,7 +26,6 @@ class _LoginViewState extends State<LoginView> {
             bottom: 40,
           ),
           shrinkWrap: true,
-          reverse: true,
           children: [
             const Text(
               'Log In',
@@ -129,7 +128,9 @@ class _LoginViewState extends State<LoginView> {
               onPressed: () {},
               primaryColor: ButtonColor.orange,
             ),
-            const Spacer(),
+            const SizedBox(
+              height: 140,
+            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -161,7 +162,7 @@ class _LoginViewState extends State<LoginView> {
                 ),
               ],
             ),
-          ].reversed.toList(),
+          ],
         ),
       ),
     );
