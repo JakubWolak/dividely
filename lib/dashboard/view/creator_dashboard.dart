@@ -576,69 +576,84 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                     itemCount: 4,
                     physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, _) {
-                      return Row(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              boxShadow: const [
-                                BoxShadow(
-                                  offset: Offset(0, 4),
-                                  blurRadius: 12,
-                                  color: Color.fromRGBO(49, 75, 206, 0.3),
-                                ),
-                              ],
-                              color: Colors.white,
-                            ),
-                            height: 54,
-                            width: 54,
-                            child: const Image(
-                              image: AssetImage(
-                                'assets/images/temporary/spotify.png',
+                      return InkWell(
+                        onTap: () =>
+                            ScaffoldMessenger.of(context).showMaterialBanner(
+                          MaterialBanner(
+                            content: const Text('elo elo'),
+                            actions: [
+                              GestureDetector(
+                                child: const Text('Close'),
+                                onTap: () => ScaffoldMessenger.of(context)
+                                    .clearMaterialBanners(),
                               ),
-                              opacity: AlwaysStoppedAnimation<double>(0.8),
-                            ),
+                            ],
                           ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                Text(
-                                  'Spotify Premium',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                    fontFamily: 'Inter',
-                                    color: Colors.black87,
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                boxShadow: const [
+                                  BoxShadow(
+                                    offset: Offset(0, 4),
+                                    blurRadius: 12,
+                                    color: Color.fromRGBO(49, 75, 206, 0.3),
                                   ),
+                                ],
+                                color: Colors.white,
+                              ),
+                              height: 54,
+                              width: 54,
+                              child: const Image(
+                                image: AssetImage(
+                                  'assets/images/temporary/spotify.png',
                                 ),
-                                SizedBox(
-                                  height: 6,
-                                ),
-                                Text(
-                                  '23rd march 2022',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontFamily: 'Inter',
-                                    color: Colors.black54,
+                                opacity: AlwaysStoppedAnimation<double>(0.8),
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  Text(
+                                    'Spotify Premium',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: 'Inter',
+                                      color: Colors.black87,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    '23rd march 2022',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      fontFamily: 'Inter',
+                                      color: Colors.black54,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                          const Text(
-                            r'12.5$',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w700,
-                              color: Colors.black87,
+                            const Text(
+                              r'12.5$',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w700,
+                                color: Colors.black87,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       );
                     },
                     separatorBuilder: (context, _) {
