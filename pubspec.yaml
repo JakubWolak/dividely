@@ -49,6 +49,10 @@ flutter:
       fonts:
         - asset: assets/fonts/Abel-Regular.ttf
           style: normal
+    - family: NotoSerif
+      fonts:
+        - asset: assets/fonts/NotoSerif-Regular.ttf
+          style: normal
   assets:
     - assets/images/wallet.png
     - assets/images/scan_qr_code.png
@@ -58,3 +62,4 @@ flutter:
     - assets/images/continue_button_arrow.png
     - assets/images/boarding_successful.png
     - assets/images/temporary/flag.png
+    - assets/images/temporary/rudy.png
