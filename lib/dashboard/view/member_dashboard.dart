@@ -1,14 +1,15 @@
-import 'package:dividely/common_widgets/buttons/shadow_icon_button.dart';
 import 'package:flutter/material.dart';
 
-class CreatorDashboardView extends StatefulWidget {
-  const CreatorDashboardView({super.key});
+import '../../common_widgets/buttons/shadow_icon_button.dart';
+
+class MemberDashboardView extends StatefulWidget {
+  const MemberDashboardView({super.key});
 
   @override
-  State<CreatorDashboardView> createState() => _CreatorDashboardState();
+  State<MemberDashboardView> createState() => _MemberDashboardState();
 }
 
-class _CreatorDashboardState extends State<CreatorDashboardView> {
+class _MemberDashboardState extends State<MemberDashboardView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,30 +72,45 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                           ),
                         ),
                         Container(
-                          padding: const EdgeInsets.only(top: 50, bottom: 20),
+                          padding: const EdgeInsets.only(top: 50, bottom: 10),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               const Text(
                                 'John Doe',
                                 style: TextStyle(
-                                    fontSize: 26, fontFamily: 'GilroyBold'),
+                                  fontSize: 26,
+                                  fontFamily: 'GilroyBold',
+                                ),
                               ),
                               const SizedBox(
-                                height: 10,
+                                height: 5,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
-                                  Icon(Icons.account_circle_outlined),
-                                  SizedBox(width: 6),
-                                  Text(
-                                    'creator',
-                                    style: TextStyle(
-                                        fontSize: 16, fontFamily: 'Inter'),
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      Icon(Icons.account_circle_outlined),
+                                      SizedBox(width: 6),
+                                      Text(
+                                        'member',
+                                        style: TextStyle(
+                                            fontSize: 16, fontFamily: 'Inter'),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    width: 40,
+                                  ),
+                                  TextButton(
+                                    onPressed: () {},
+                                    child: const Text('Become creator'),
+                                    style: TextButton.styleFrom(),
                                   ),
                                 ],
-                              )
+                              ),
                             ],
                           ),
                         ),
@@ -190,39 +206,6 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                               minimumSize: const Size.square(53),
                             ),
                             child: const Icon(
-                              Icons.shopping_bag_outlined,
-                              size: 22,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 6,
-                          ),
-                          const Text(
-                            'Add group',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontFamily: 'Inter',
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              shape: const CircleBorder(),
-                              backgroundColor:
-                                  const Color.fromRGBO(244, 245, 246, 1),
-                              foregroundColor: Colors.black87,
-                              padding: EdgeInsets.zero,
-                              elevation: 0,
-                              shadowColor: Colors.black38,
-                              minimumSize: const Size.square(53),
-                            ),
-                            child: const Icon(
                               Icons.history_outlined,
                               size: 22,
                             ),
@@ -272,99 +255,6 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                             ),
                           ),
                         ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(vertical: 10),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            backgroundColor: const Color.fromRGBO(
-                              255,
-                              137,
-                              126,
-                              1,
-                            ),
-                            shadowColor: const Color.fromRGBO(
-                              255,
-                              137,
-                              126,
-                              0.4,
-                            ),
-                            elevation: 12,
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Text(
-                                'Balance',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              Text(
-                                r'$26,44',
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontFamily: 'NotoSerif',
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: const Color.fromRGBO(49, 75, 206, 1),
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Color.fromRGBO(49, 75, 206, 0.3),
-                                offset: Offset(0, 10),
-                                blurRadius: 25,
-                                spreadRadius: 2,
-                              ),
-                            ],
-                          ),
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Text(
-                                'Frozen',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              Text(
-                                r'$13,15',
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontFamily: 'NotoSerif',
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
                       ),
                     ],
                   ),
