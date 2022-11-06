@@ -11,7 +11,8 @@ class PhoneConfirmationCode extends StatelessWidget {
       backgroundColor: Colors.white,
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(top: 40, left: 20),
-        child: CustomBackButton(
+        child: ShadowIconButton(
+          icon: Icons.arrow_back,
           onPressed: () {},
         ),
       ),

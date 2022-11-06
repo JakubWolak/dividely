@@ -1,5 +1,6 @@
 import 'package:dividely/common_widgets/buttons/shadow_icon_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class CreatorDashboardView extends StatefulWidget {
   const CreatorDashboardView({super.key});
@@ -352,7 +353,48 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                 ),
               ],
             ),
+            const SizedBox(
+              height: 35,
+            ),
+            const Text(
+              'My groups',
+              style: TextStyle(
+                fontSize: 26,
+                fontFamily: 'GilroyBold',
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
             SizedBox(
+              height: 160,
+              child: ListView.separated(
+                physics: const BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
+                itemCount: 10,
+                itemBuilder: (context, i) {
+                  return Container(
+                    width: 140,
+                    height: 160,
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/temporary/netflix.png'),
+                          fit: BoxFit.cover,
+                        opacity: 0.45,
+
+                      ),
+                    ),
+                    child: Text('Netflix'),
+                  );
+                },
+                separatorBuilder: (_, __) {
+                  return const SizedBox(width: 22,);
+                },
+              ),
+            ),
+            const SizedBox(
               height: 500,
             ),
           ].reversed.toList(),
