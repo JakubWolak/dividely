@@ -298,7 +298,7 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                           ),
                         ),
                         Text(
-                          r'$255,000',
+                          r'$26,44',
                           style: TextStyle(
                             fontSize: 24,
                             fontFamily: 'NotoSerif',
@@ -332,14 +332,14 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         Text(
-                          'Balance',
+                          'Frozen',
                           style: TextStyle(
                             fontSize: 14,
                             color: Colors.white,
                           ),
                         ),
                         Text(
-                          r'$255,000',
+                          r'$13,15',
                           style: TextStyle(
                             fontSize: 24,
                             fontFamily: 'NotoSerif',
@@ -377,20 +377,27 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                   return Container(
                     width: 140,
                     height: 160,
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/temporary/netflix.png'),
-                          fit: BoxFit.cover,
-                        opacity: 0.45,
-
-                      ),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 10,
                     ),
-                    child: Text('Netflix'),
+                    alignment: Alignment.bottomLeft,
+                    decoration: BoxDecoration(
+                      image: const DecorationImage(
+                        image:
+                            AssetImage('assets/images/temporary/netflix.png'),
+                        fit: BoxFit.cover,
+                        opacity: 0.45,
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Text('Netflix'),
                   );
                 },
                 separatorBuilder: (_, __) {
-                  return const SizedBox(width: 22,);
+                  return const SizedBox(
+                    width: 22,
+                  );
                 },
               ),
             ),
