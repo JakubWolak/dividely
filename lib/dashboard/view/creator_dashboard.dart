@@ -84,6 +84,7 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
               ),
               ListView.separated(
                 shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, _) {
                   return TextButton(
                     onPressed: () {},
@@ -566,6 +567,7 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                   ListView.separated(
                     shrinkWrap: true,
                     itemCount: 4,
+                    physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, _) {
                       return Row(
                         children: [
