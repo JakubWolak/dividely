@@ -46,11 +46,97 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                 ),
                 child: const Text('CLOSE'),
               ),
+              DecoratedBox(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Image(
+                  image: AssetImage(
+                    'assets/images/temporary/rudy.png',
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              const Text(
+                'John Doe',
+                style: TextStyle(
+                  fontSize: 26,
+                  fontFamily: 'GilroyBold',
+                  color: Colors.black87,
+                ),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              const Text(
+                'United States',
+                style: TextStyle(
+                  fontSize: 15,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black87,
+                ),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              ListView.separated(
+                shrinkWrap: true,
+                itemBuilder: (context, _) {
+                  return TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 5,
+                        vertical: 16,
+                      ),
+                      animationDuration: Duration.zero,
+                      foregroundColor: const Color.fromRGBO(127, 129, 147, 1),
+                      textStyle: const TextStyle(
+                        fontSize: 18,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black54,
+                      ),
+                      alignment: Alignment.centerLeft,
+                    ),
+                    child: const Text('Profile'),
+                  );
+                },
+                separatorBuilder: (context, _) {
+                  return const Divider(
+                    color: Color.fromRGBO(237, 241, 255, 1),
+                    thickness: 2,
+                    height: 8,
+                  );
+                },
+                itemCount: 5,
+              ),
+              const Spacer(),
+              TextButton.icon(
+                onPressed: () {},
+                icon: const Text('LOGOUT'),
+                label: const Icon(
+                  Icons.arrow_forward,
+                  size: 22,
+                ),
+                style: TextButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  backgroundColor: Colors.transparent,
+                  foregroundColor: const Color.fromRGBO(49, 75, 206, 1),
+                  textStyle: const TextStyle(
+                    fontSize: 16,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
       ),
-      drawerDragStartBehavior: DragStartBehavior.start,
       body: Container(
         width: double.infinity,
         height: MediaQuery.of(context).size.height,
