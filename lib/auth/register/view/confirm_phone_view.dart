@@ -53,12 +53,14 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
                 children: [
                   TextSpan(text: 'Please enter '),
                   TextSpan(
-                      text: 'your phone number ',
-                      style: TextStyle(fontWeight: FontWeight.bold)),
+                    text: 'your phone number ',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                   TextSpan(text: 'and '),
                   TextSpan(
-                      text: 'location ',
-                      style: TextStyle(fontWeight: FontWeight.bold)),
+                    text: 'location ',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                   TextSpan(text: 'so we can verify you.'),
                 ],
               ),

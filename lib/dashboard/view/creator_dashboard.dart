@@ -21,388 +21,493 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
           physics: const BouncingScrollPhysics(),
           shrinkWrap: true,
           reverse: true,
-          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 60),
+          padding: const EdgeInsets.symmetric(vertical: 60),
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ShadowIconButton(
-                  icon: Icons.menu,
-                  onPressed: () {},
-                ),
-                ShadowIconButton(
-                  icon: Icons.remove_sharp,
-                  onPressed: () {},
-                ),
-              ],
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 30),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: const Color.fromRGBO(245, 246, 250, 1),
-              ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: SizedBox(
-                      width: 100,
-                      height: 10,
-                      child: OverflowBox(
-                        maxHeight: 68,
-                        maxWidth: 68,
-                        minHeight: 68,
-                        minWidth: 68,
-                        child: DecoratedBox(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ShadowIconButton(
+                        icon: Icons.menu,
+                        onPressed: () {},
+                      ),
+                      ShadowIconButton(
+                        icon: Icons.remove_sharp,
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(top: 30),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: const Color.fromRGBO(245, 246, 250, 1),
+                    ),
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.topCenter,
+                          child: SizedBox(
+                            width: 100,
+                            height: 10,
+                            child: OverflowBox(
+                              maxHeight: 68,
+                              maxWidth: 68,
+                              minHeight: 68,
+                              minWidth: 68,
+                              child: DecoratedBox(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: const Image(
+                                  image: AssetImage(
+                                      'assets/images/temporary/rudy.png'),
+                                ),
+                              ),
+                            ),
                           ),
-                          child: const Image(
-                            image:
-                                AssetImage('assets/images/temporary/rudy.png'),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(top: 50, bottom: 20),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text(
+                                'John Doe',
+                                style: TextStyle(
+                                    fontSize: 26, fontFamily: 'GilroyBold'),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const [
+                                  Icon(Icons.account_circle_outlined),
+                                  SizedBox(width: 6),
+                                  Text(
+                                    'creator',
+                                    style: TextStyle(
+                                        fontSize: 16, fontFamily: 'Inter'),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              shape: const CircleBorder(),
+                              backgroundColor:
+                                  const Color.fromRGBO(244, 245, 246, 1),
+                              foregroundColor: Colors.black87,
+                              padding: EdgeInsets.zero,
+                              elevation: 0,
+                              shadowColor: Colors.black38,
+                              minimumSize: const Size.square(53),
+                            ),
+                            child: const Icon(
+                              Icons.sync_alt,
+                              size: 22,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          const Text(
+                            'Transfer',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontFamily: 'Inter',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              shape: const CircleBorder(),
+                              backgroundColor:
+                                  const Color.fromRGBO(255, 137, 126, 0.3),
+                              foregroundColor: Colors.black87,
+                              padding: EdgeInsets.zero,
+                              elevation: 0,
+                              shadowColor: Colors.black38,
+                              minimumSize: const Size.square(53),
+                            ),
+                            child: const Icon(
+                              Icons.person_add_outlined,
+                              size: 22,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          const Text(
+                            'Join group',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontFamily: 'Inter',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              shape: const CircleBorder(),
+                              backgroundColor:
+                                  const Color.fromRGBO(244, 245, 246, 1),
+                              foregroundColor: Colors.black87,
+                              padding: EdgeInsets.zero,
+                              elevation: 0,
+                              shadowColor: Colors.black38,
+                              minimumSize: const Size.square(53),
+                            ),
+                            child: const Icon(
+                              Icons.shopping_bag_outlined,
+                              size: 22,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          const Text(
+                            'Add group',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontFamily: 'Inter',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              shape: const CircleBorder(),
+                              backgroundColor:
+                                  const Color.fromRGBO(244, 245, 246, 1),
+                              foregroundColor: Colors.black87,
+                              padding: EdgeInsets.zero,
+                              elevation: 0,
+                              shadowColor: Colors.black38,
+                              minimumSize: const Size.square(53),
+                            ),
+                            child: const Icon(
+                              Icons.history_outlined,
+                              size: 22,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          const Text(
+                            'History',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontFamily: 'Inter',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              shape: const CircleBorder(),
+                              backgroundColor:
+                                  const Color.fromRGBO(244, 245, 246, 1),
+                              foregroundColor: Colors.black87,
+                              padding: EdgeInsets.zero,
+                              elevation: 0,
+                              shadowColor: Colors.black38,
+                              minimumSize: const Size.square(53),
+                            ),
+                            child: const Icon(
+                              Icons.fact_check_outlined,
+                              size: 22,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          const Text(
+                            'Pending\nrequests',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontFamily: 'Inter',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: const Color.fromRGBO(255, 137, 126, 1),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Color.fromRGBO(255, 137, 126, 0.28),
+                                offset: Offset(0, 10),
+                                blurRadius: 25,
+                                spreadRadius: 2,
+                              ),
+                            ],
+                          ),
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Text(
+                                'Balance',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                r'$26,44',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontFamily: 'NotoSerif',
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              )
+                            ],
                           ),
                         ),
                       ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: const Color.fromRGBO(49, 75, 206, 1),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Color.fromRGBO(49, 75, 206, 0.3),
+                                offset: Offset(0, 10),
+                                blurRadius: 25,
+                                spreadRadius: 2,
+                              ),
+                            ],
+                          ),
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Text(
+                                'Frozen',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                r'$13,15',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontFamily: 'NotoSerif',
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 35,
+                  ),
+                  const Text(
+                    'My groups',
+                    style: TextStyle(
+                      fontSize: 26,
+                      fontFamily: 'GilroyBold',
                     ),
                   ),
-                  Container(
-                    padding: const EdgeInsets.only(top: 50, bottom: 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'John Doe',
-                          style:
-                              TextStyle(fontSize: 26, fontFamily: 'GilroyBold'),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Icon(Icons.account_circle_outlined),
-                            SizedBox(width: 6),
-                            Text(
-                              'creator',
-                              style:
-                                  TextStyle(fontSize: 16, fontFamily: 'Inter'),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
+                  const SizedBox(
+                    height: 30,
                   ),
                 ],
               ),
             ),
-            const SizedBox(
-              height: 25,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        shape: const CircleBorder(),
-                        backgroundColor: const Color.fromRGBO(244, 245, 246, 1),
-                        foregroundColor: Colors.black87,
-                        padding: EdgeInsets.zero,
-                        elevation: 0,
-                        shadowColor: Colors.black38,
-                        minimumSize: const Size.square(53),
+            Padding(
+              padding: const EdgeInsets.only(left: 40),
+              child: SizedBox(
+                height: 160,
+                child: ListView.separated(
+                  physics: const BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  itemCount: 10,
+                  itemBuilder: (context, i) {
+                    return Container(
+                      width: 140,
+                      height: 160,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 10,
                       ),
-                      child: const Icon(
-                        Icons.sync_alt,
-                        size: 22,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 6,
-                    ),
-                    const Text(
-                      'Transfer',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        shape: const CircleBorder(),
-                        backgroundColor:
-                            const Color.fromRGBO(255, 137, 126, 0.3),
-                        foregroundColor: Colors.black87,
-                        padding: EdgeInsets.zero,
-                        elevation: 0,
-                        shadowColor: Colors.black38,
-                        minimumSize: const Size.square(53),
-                      ),
-                      child: const Icon(
-                        Icons.person_add_outlined,
-                        size: 22,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 6,
-                    ),
-                    const Text(
-                      'Join group',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        shape: const CircleBorder(),
-                        backgroundColor: const Color.fromRGBO(244, 245, 246, 1),
-                        foregroundColor: Colors.black87,
-                        padding: EdgeInsets.zero,
-                        elevation: 0,
-                        shadowColor: Colors.black38,
-                        minimumSize: const Size.square(53),
-                      ),
-                      child: const Icon(
-                        Icons.shopping_bag_outlined,
-                        size: 22,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 6,
-                    ),
-                    const Text(
-                      'Add group',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        shape: const CircleBorder(),
-                        backgroundColor: const Color.fromRGBO(244, 245, 246, 1),
-                        foregroundColor: Colors.black87,
-                        padding: EdgeInsets.zero,
-                        elevation: 0,
-                        shadowColor: Colors.black38,
-                        minimumSize: const Size.square(53),
-                      ),
-                      child: const Icon(
-                        Icons.history_outlined,
-                        size: 22,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 6,
-                    ),
-                    const Text(
-                      'History',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        shape: const CircleBorder(),
-                        backgroundColor: const Color.fromRGBO(244, 245, 246, 1),
-                        foregroundColor: Colors.black87,
-                        padding: EdgeInsets.zero,
-                        elevation: 0,
-                        shadowColor: Colors.black38,
-                        minimumSize: const Size.square(53),
-                      ),
-                      child: const Icon(
-                        Icons.fact_check_outlined,
-                        size: 22,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 6,
-                    ),
-                    const Text(
-                      'Pending\nrequests',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: const Color.fromRGBO(255, 137, 126, 1),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Color.fromRGBO(255, 137, 126, 0.28),
-                          offset: Offset(0, 10),
-                          blurRadius: 25,
-                          spreadRadius: 2,
+                      alignment: Alignment.bottomLeft,
+                      decoration: BoxDecoration(
+                        image: const DecorationImage(
+                          image:
+                              AssetImage('assets/images/temporary/netflix.png'),
+                          fit: BoxFit.cover,
+                          opacity: 0.45,
                         ),
-                      ],
-                    ),
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          'Balance',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Text(
-                          r'$26,44',
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontFamily: 'NotoSerif',
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Text('Netflix'),
+                    );
+                  },
+                  separatorBuilder: (_, __) {
+                    return const SizedBox(
+                      width: 22,
+                    );
+                  },
                 ),
-                const SizedBox(
-                  width: 10,
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: const Color.fromRGBO(49, 75, 206, 1),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Color.fromRGBO(49, 75, 206, 0.3),
-                          offset: Offset(0, 10),
-                          blurRadius: 25,
-                          spreadRadius: 2,
-                        ),
-                      ],
-                    ),
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          'Frozen',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Text(
-                          r'$13,15',
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontFamily: 'NotoSerif',
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 35,
-            ),
-            const Text(
-              'My groups',
-              style: TextStyle(
-                fontSize: 26,
-                fontFamily: 'GilroyBold',
               ),
             ),
-            const SizedBox(
-              height: 30,
-            ),
-            SizedBox(
-              height: 160,
-              child: ListView.separated(
-                physics: const BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
-                itemCount: 10,
-                itemBuilder: (context, i) {
-                  return Container(
-                    width: 140,
-                    height: 160,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 10,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 35,
+                  ),
+                  const Text(
+                    'Soon payments',
+                    style: TextStyle(
+                      fontSize: 26,
+                      fontFamily: 'GilroyBold',
                     ),
-                    alignment: Alignment.bottomLeft,
-                    decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        image:
-                            AssetImage('assets/images/temporary/netflix.png'),
-                        fit: BoxFit.cover,
-                        opacity: 0.45,
-                      ),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Text('Netflix'),
-                  );
-                },
-                separatorBuilder: (_, __) {
-                  return const SizedBox(
-                    width: 22,
-                  );
-                },
+                  ),
+                  ListView.separated(
+                    shrinkWrap: true,
+                    itemCount: 4,
+                    itemBuilder: (context, _) {
+                      return Row(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: const [
+                                BoxShadow(
+                                  offset: Offset(0, 4),
+                                  blurRadius: 12,
+                                  color: Color.fromRGBO(49, 75, 206, 0.3),
+                                ),
+                              ],
+                              color: Colors.white,
+                            ),
+                            height: 54,
+                            width: 54,
+                            child: const Image(
+                              image: AssetImage(
+                                'assets/images/temporary/spotify.png',
+                              ),
+                              opacity: AlwaysStoppedAnimation<double>(0.8),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Text(
+                                  'Spotify Premium',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'Inter',
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 6,
+                                ),
+                                Text(
+                                  '23rd march 2022',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: 'Inter',
+                                    color: Colors.black54,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const Text(
+                            r'12.5$',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'Inter',
+                              fontWeight: FontWeight.w700,
+                              color: Colors.black87,
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                    separatorBuilder: (context, _) {
+                      return const SizedBox(
+                        height: 24,
+                      );
+                    },
+                  ),
+                ],
               ),
-            ),
-            const SizedBox(
-              height: 500,
             ),
           ].reversed.toList(),
         ),
