@@ -2,8 +2,7 @@ import 'package:dividely/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import '../../dashboard/view/creator_dashboard.dart';
-import '../../dashboard/view/member_dashboard.dart';
+import '../../join_group/view/scan_qr_code.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -22,7 +21,7 @@ class App extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CreatorDashboardView(),
+      home: const ScanQrCodeView(),
       // home: const ConfirmPhoneView(),
     );
   }
