@@ -205,7 +205,9 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                               const Text(
                                 'John Doe',
                                 style: TextStyle(
-                                    fontSize: 26, fontFamily: 'GilroyBold'),
+                                  fontSize: 26,
+                                  fontFamily: 'GilroyBold',
+                                ),
                               ),
                               const SizedBox(
                                 height: 10,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
+import '../../common_widgets/buttons/rectangle_button_with_arrow.dart';
 import '../../common_widgets/buttons/shadow_icon_button.dart';
 
 class ScanQrCodeView extends StatefulWidget {
@@ -22,7 +23,7 @@ class _ScanQrCodeState extends State<ScanQrCodeView> {
           top: 60,
           left: 40,
           right: 40,
-          bottom: 65,
+          bottom: 55,
         ),
         child: Column(
           children: [
@@ -59,7 +60,7 @@ class _ScanQrCodeState extends State<ScanQrCodeView> {
               ),
             ),
             const SizedBox(
-              height: 60,
+              height: 50,
             ),
             AspectRatio(
               aspectRatio: 1,
@@ -69,20 +70,25 @@ class _ScanQrCodeState extends State<ScanQrCodeView> {
                 ),
                 child: MobileScanner(
                   fit: BoxFit.fitWidth,
-                  allowDuplicates: false,
                   controller: MobileScannerController(
-                    formats: [BarcodeFormat.qrCode]
+                    formats: [BarcodeFormat.qrCode],
                   ),
                   onDetect: (barcode, args) {
                     if (barcode.rawValue == null) {
                       debugPrint('Failed to scan Barcode');
                     } else {
-                      final String code = barcode.rawValue!;
+                      final code = barcode.rawValue!;
                       debugPrint('Barcode found! $code');
                     }
                   },
                 ),
               ),
+            ),
+            const Spacer(),
+            RectangleButtonWithArrow(
+              onPressed: () {},
+              text: 'Join by secret code',
+              description: 'Enter passcode manually',
             ),
           ],
         ),
