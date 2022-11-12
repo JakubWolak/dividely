@@ -279,8 +279,12 @@ class _GroupDetailsState extends State<GroupDetailsView> {
                       color: Colors.black87,
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: 10,
+                    itemBuilder: (context, _) {
+                      return Text('elo elo');
+                    },
                   ),
                 ],
               ),
