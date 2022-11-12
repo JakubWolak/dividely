@@ -9,5 +9,5 @@ import 'package:dividely/app/app.dart';
 import 'package:dividely/bootstrap.dart';
 
 void main() {
-  bootstrap(() => const App());
+  bootstrap(App.new);
 }

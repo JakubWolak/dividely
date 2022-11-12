@@ -1,8 +1,8 @@
 import 'package:dividely/common_widgets/buttons/blue_button.dart';
 import 'package:flutter/material.dart';
 
-class InitialPage extends StatelessWidget {
-  const InitialPage({super.key});
+class InitialView extends StatelessWidget {
+  const InitialView({super.key});
 
   static const walletLogo = 'assets/images/wallet.png';
 
@@ -18,7 +18,7 @@ class InitialPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Image(image: AssetImage(InitialPage.walletLogo)),
+              const Image(image: AssetImage(InitialView.walletLogo)),
               const SizedBox(
                 height: 30,
               ),
