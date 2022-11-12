@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dividely/common_widgets/buttons/white_button.dart';
 import 'package:flutter/material.dart';
 
@@ -48,7 +49,7 @@ class BoardingFinishedView extends StatelessWidget {
               width: 185,
               child: WhiteButton(
                 text: 'Get Started',
-                onPressed: () {},
+                onPressed: () => context.router.pushNamed('/login-view'),
               ),
             )
           ],

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dividely/common_widgets/buttons/white_continue_button.dart';
 import 'package:flutter/material.dart';
 
@@ -47,8 +48,12 @@ class WelcomeView extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Padding(
-        padding: EdgeInsets.only(bottom: 30),
-        child: WhiteContinueButton(onPressed: () {}),
+        padding: const EdgeInsets.only(bottom: 30),
+        child: WhiteContinueButton(
+          onPressed: () => context.router.pushNamed(
+            '/register-view',
+          ),
+        ),
       ),
     );
   }

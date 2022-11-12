@@ -1,6 +1,5 @@
+import 'package:dividely/common_widgets/buttons/shadow_icon_button.dart';
 import 'package:flutter/material.dart';
-
-import '../../common_widgets/buttons/shadow_icon_button.dart';
 
 class MemberDashboardView extends StatefulWidget {
   const MemberDashboardView({super.key});
@@ -65,7 +64,7 @@ class _MemberDashboardState extends State<MemberDashboardView> {
                                 ),
                                 child: const Image(
                                   image: AssetImage(
-                                      'assets/images/temporary/rudy.png',
+                                    'assets/images/temporary/rudy.png',
                                   ),
                                 ),
                               ),

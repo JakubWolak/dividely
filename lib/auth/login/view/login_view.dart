@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dividely/common_widgets/buttons/big_button.dart';
 import 'package:dividely/common_widgets/buttons/login_method_button.dart';
 import 'package:dividely/common_widgets/inputs/text_input.dart';
@@ -125,7 +126,8 @@ class _LoginViewState extends State<LoginView> {
             ),
             BigButton(
               text: 'Log In',
-              onPressed: () {},
+              onPressed: () =>
+                  context.router.pushNamed('/creator-dashboard-view'),
               primaryColor: ButtonColor.orange,
             ),
             const SizedBox(
@@ -143,7 +145,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
                 TextButton.icon(
-                  onPressed: () {},
+                  onPressed: () => context.router.pushNamed('/register-view'),
                   icon: const Text('REGISTER'),
                   label: const Icon(
                     Icons.arrow_forward,

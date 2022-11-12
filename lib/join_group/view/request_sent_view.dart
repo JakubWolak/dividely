@@ -1,7 +1,6 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:dividely/common_widgets/buttons/small_blue_button.dart';
 import 'package:flutter/material.dart';
-
-import '../../common_widgets/buttons/blue_button.dart';
-import '../../common_widgets/buttons/small_blue_button.dart';
 
 class RequestSentView extends StatelessWidget {
   const RequestSentView({super.key});
@@ -49,7 +48,8 @@ class RequestSentView extends StatelessWidget {
               width: 190,
               child: SmallBlueButton(
                 text: 'Homepage',
-                onPressed: () {},
+                onPressed: () =>
+                    context.router.pushNamed('/creator-dashboard-view'),
               ),
             ),
           ],

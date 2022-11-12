@@ -1,5 +1,5 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dividely/common_widgets/buttons/shadow_icon_button.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class CreatorDashboardView extends StatefulWidget {
@@ -274,7 +274,9 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () => context.router.pushNamed(
+                              '/scan-qr-code-view',
+                            ),
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               backgroundColor:

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
@@ -32,7 +33,7 @@ class _ScanQrCodeState extends State<ScanQrCodeView> {
               children: [
                 ShadowIconButton(
                   icon: Icons.arrow_back,
-                  onPressed: () {},
+                  onPressed: () => context.router.pop(),
                 ),
               ],
             ),
@@ -86,7 +87,7 @@ class _ScanQrCodeState extends State<ScanQrCodeView> {
             ),
             const Spacer(),
             RectangleButtonWithArrow(
-              onPressed: () {},
+              onPressed: () => context.router.pushNamed('/group-details-view'),
               mainColor: const Color.fromRGBO(255, 137, 126, 1),
               text: 'Join by secret code',
               description: 'Enter passcode manually',

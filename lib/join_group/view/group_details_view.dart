@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dividely/common_widgets/buttons/rectangle_button_with_arrow.dart';
 import 'package:dividely/common_widgets/buttons/shadow_icon_button.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +56,7 @@ class _GroupDetailsState extends State<GroupDetailsView> {
                           ),
                           ShadowIconButton(
                             icon: Icons.arrow_back,
-                            onPressed: () {},
+                            onPressed: () => context.router.pop(),
                           ),
                         ],
                       ),
@@ -367,7 +368,7 @@ class _GroupDetailsState extends State<GroupDetailsView> {
       floatingActionButton: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: RectangleButtonWithArrow(
-          onPressed: () {},
+          onPressed: () => context.router.pushNamed('/request-sent-view'),
           text: 'Join this group',
           mainColor: const Color.fromRGBO(49, 75, 206, 1),
         ),

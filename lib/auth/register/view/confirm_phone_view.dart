@@ -1,8 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dividely/common_widgets/buttons/big_button.dart';
+import 'package:dividely/common_widgets/buttons/login_method_button.dart';
 import 'package:dividely/common_widgets/inputs/text_input.dart';
 import 'package:flutter/material.dart';
-
-import 'package:dividely/common_widgets/buttons/login_method_button.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class ConfirmPhoneView extends StatefulWidget {
@@ -198,7 +198,8 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
             ),
             BigButton(
               text: 'Register',
-              onPressed: () {},
+              onPressed: () =>
+                  context.router.pushNamed('/phone-confirmation-code-view'),
               primaryColor: ButtonColor.orange,
             ),
             const SizedBox(
@@ -269,7 +270,7 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
                       fontSize: 14, fontFamily: 'Inter', color: Colors.black87),
                 ),
                 TextButton.icon(
-                  onPressed: () {},
+                  onPressed: () => context.router.pushNamed('/login-view'),
                   icon: const Text('LOGIN'),
                   label: const Icon(
                     Icons.arrow_forward,

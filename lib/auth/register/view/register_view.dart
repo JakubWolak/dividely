@@ -1,8 +1,8 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:dividely/common_widgets/buttons/big_button.dart';
+import 'package:dividely/common_widgets/buttons/login_method_button.dart';
+import 'package:dividely/common_widgets/inputs/text_input.dart';
 import 'package:flutter/material.dart';
-
-import '../../../common_widgets/buttons/big_button.dart';
-import '../../../common_widgets/buttons/login_method_button.dart';
-import '../../../common_widgets/inputs/text_input.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
@@ -161,7 +161,7 @@ class _RegisterViewState extends State<RegisterView> {
             ),
             BigButton(
               text: 'Next',
-              onPressed: () {},
+              onPressed: () => context.router.pushNamed('/confirm-phone-view'),
               primaryColor: ButtonColor.orange,
             ),
             const Spacer(),
@@ -177,7 +177,7 @@ class _RegisterViewState extends State<RegisterView> {
                   ),
                 ),
                 TextButton.icon(
-                  onPressed: () {},
+                  onPressed: () => context.router.pushNamed('/login-view'),
                   icon: const Text('LOGIN'),
                   label: const Icon(
                     Icons.arrow_forward,

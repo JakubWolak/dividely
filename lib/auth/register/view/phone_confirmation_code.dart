@@ -1,9 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dividely/common_widgets/buttons/shadow_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-class PhoneConfirmationCode extends StatelessWidget {
-  const PhoneConfirmationCode({super.key});
+class PhoneConfirmationCodeView extends StatelessWidget {
+  const PhoneConfirmationCodeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class PhoneConfirmationCode extends StatelessWidget {
         padding: const EdgeInsets.only(top: 40, left: 20),
         child: ShadowIconButton(
           icon: Icons.arrow_back,
-          onPressed: () {},
+          onPressed: () => context.router.pop(),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
@@ -112,7 +113,8 @@ class PhoneConfirmationCode extends StatelessWidget {
                   )
                 ],
                 onCompleted: (v) {
-                  debugPrint("Completed");
+                  debugPrint('Completed');
+                  context.router.pushNamed('/boarding-finished-view');
                 },
                 // onTap: () {
                 //   print("Pressed");
@@ -124,7 +126,7 @@ class PhoneConfirmationCode extends StatelessWidget {
                   // });
                 },
                 beforeTextPaste: (text) {
-                  debugPrint("Allowing to paste $text");
+                  debugPrint('Allowing to paste $text');
                   //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
                   //but you can show anything you want here, like your pop up saying wrong paste format or etc
                   return true;

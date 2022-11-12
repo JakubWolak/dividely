@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dividely/common_widgets/buttons/blue_button.dart';
 import 'package:flutter/material.dart';
 
@@ -54,9 +55,7 @@ class InitialView extends StatelessWidget {
               ),
               BlueButton(
                 text: 'Get started now!',
-                onPressed: () {
-                  print('eeee no elo elo');
-                },
+                onPressed: () => context.router.pushNamed('/introduction-view'),
               ),
             ],
           ),
