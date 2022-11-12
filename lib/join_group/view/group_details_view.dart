@@ -13,21 +13,20 @@ class _GroupDetailsState extends State<GroupDetailsView> {
   @override
   Widget build(BuildContext context) {
     final paddingTop = MediaQuery.of(context).viewPadding.top;
-    final paddingBottom = MediaQuery.of(context).viewPadding.bottom;
+    final paddingBottom = MediaQuery.of(context).viewPadding.bottom + 70;
 
     return Scaffold(
       body: Container(
         width: double.infinity,
         height: MediaQuery.of(context).size.height,
         color: Colors.white,
-        padding: EdgeInsets.only(
-          top: paddingTop + 20,
-          left: 20,
-          right: 20,
-          bottom: paddingBottom + 55,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
+          padding: EdgeInsets.only(
+            top: paddingTop + 20,
+            left: 20,
+            right: 20,
+          ),
+          shrinkWrap: true,
           children: [
             Container(
               width: double.infinity,
@@ -269,7 +268,7 @@ class _GroupDetailsState extends State<GroupDetailsView> {
                     ),
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 35,
                   ),
                   const Text(
                     'Members',
@@ -279,12 +278,84 @@ class _GroupDetailsState extends State<GroupDetailsView> {
                       color: Colors.black87,
                     ),
                   ),
-                  ListView.builder(
+                  ListView.separated(
+                    physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
-                    itemCount: 10,
-                    itemBuilder: (context, _) {
-                      return Text('elo elo');
+                    itemCount: 4,
+                    separatorBuilder: (context, _) {
+                      return const SizedBox(
+                        height: 30,
+                      );
                     },
+                    itemBuilder: (context, counter) {
+                      return Row(
+                        children: [
+                          const Image(
+                            height: 54,
+                            width: 54,
+                            image: AssetImage(
+                              'assets/images/temporary/rudy.png',
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Text(
+                                'Bonnie Riley',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontFamily: 'Inter',
+                                  color: Colors.black87,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 3,
+                              ),
+                              Text(
+                                'Joined 2 weeks ago',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontFamily: 'Inter',
+                                  color: Colors.black45,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                          if (counter == 0) ...[
+                            const Spacer(),
+                            DecoratedBox(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: const Color.fromRGBO(255, 137, 126, 1),
+                              ),
+                              child: const Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                  vertical: 4,
+                                ),
+                                child: Text(
+                                  'Creator',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: 'Inter',
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ]
+                        ],
+                      );
+                    },
+                  ),
+                  SizedBox(
+                    height: paddingBottom,
                   ),
                 ],
               ),

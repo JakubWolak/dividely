@@ -65,7 +65,8 @@ class _MemberDashboardState extends State<MemberDashboardView> {
                                 ),
                                 child: const Image(
                                   image: AssetImage(
-                                      'assets/images/temporary/rudy.png'),
+                                      'assets/images/temporary/rudy.png',
+                                  ),
                                 ),
                               ),
                             ),
