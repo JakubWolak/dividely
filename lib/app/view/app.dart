@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import '../../join_group/view/group_details_view.dart';
+import '../../join_group/view/request_sent_view.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -21,7 +22,7 @@ class App extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const GroupDetailsView(),
+      home: const RequestSentView(),
       // home: const ConfirmPhoneView(),
     );
   }

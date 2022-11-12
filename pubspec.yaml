@@ -62,6 +62,7 @@ flutter:
     - assets/images/welcome.png
     - assets/images/continue_button_arrow.png
     - assets/images/boarding_successful.png
+    - assets/images/request_sent.png
     - assets/images/temporary/flag.png
     - assets/images/temporary/rudy.png
     - assets/images/temporary/netflix.png

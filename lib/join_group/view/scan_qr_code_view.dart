@@ -87,6 +87,7 @@ class _ScanQrCodeState extends State<ScanQrCodeView> {
             const Spacer(),
             RectangleButtonWithArrow(
               onPressed: () {},
+              mainColor: const Color.fromRGBO(255, 137, 126, 1),
               text: 'Join by secret code',
               description: 'Enter passcode manually',
             ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BlueButton extends StatelessWidget {
-  const BlueButton({
+class SmallBlueButton extends StatelessWidget {
+  const SmallBlueButton({
     super.key,
     required this.text,
     required this.onPressed,
@@ -15,9 +15,13 @@ class BlueButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 75),
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
         minimumSize: const Size.fromHeight(56),
-        textStyle: const TextStyle(fontSize: 18, fontFamily: 'SourceSansProBold'),
+        textStyle: const TextStyle(
+          fontSize: 18,
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.w600,
+        ),
         backgroundColor: const Color.fromRGBO(49, 75, 206, 1),
         foregroundColor: Colors.white,
         elevation: 15,
