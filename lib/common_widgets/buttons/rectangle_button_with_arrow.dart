@@ -5,10 +5,12 @@ class RectangleButtonWithArrow extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
+    required this.mainColor,
     this.description,
   });
 
   final void Function() onPressed;
+  final Color mainColor;
   final String text;
   final String? description;
 
@@ -29,7 +31,7 @@ class RectangleButtonWithArrow extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
-        backgroundColor: const Color.fromRGBO(255, 137, 126, 1),
+        backgroundColor: mainColor,
         textStyle: const TextStyle(
           fontSize: 12,
           fontFamily: 'Inter',
@@ -37,7 +39,7 @@ class RectangleButtonWithArrow extends StatelessWidget {
           color: Colors.white,
         ),
         elevation: 15,
-        shadowColor: const Color.fromRGBO(255, 137, 126, 0.35),
+        shadowColor: mainColor.withOpacity(0.35),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -67,10 +69,10 @@ class RectangleButtonWithArrow extends StatelessWidget {
             ),
             height: 44,
             width: 44,
-            child: const Icon(
+            child: Icon(
               Icons.arrow_forward,
               size: 20,
-              color: Color.fromRGBO(255, 137, 126, 1),
+              color: mainColor,
             ),
           ),
         ],

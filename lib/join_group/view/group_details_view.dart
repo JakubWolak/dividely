@@ -1,6 +1,6 @@
+import 'package:dividely/common_widgets/buttons/rectangle_button_with_arrow.dart';
+import 'package:dividely/common_widgets/buttons/shadow_icon_button.dart';
 import 'package:flutter/material.dart';
-
-import '../../common_widgets/buttons/shadow_icon_button.dart';
 
 class GroupDetailsView extends StatefulWidget {
   const GroupDetailsView({super.key});
@@ -13,7 +13,7 @@ class _GroupDetailsState extends State<GroupDetailsView> {
   @override
   Widget build(BuildContext context) {
     final paddingTop = MediaQuery.of(context).viewPadding.top;
-    final paddingBottom = MediaQuery.of(context).viewPadding.bottom + 70;
+    final paddingBottom = MediaQuery.of(context).viewPadding.bottom + 110;
 
     return Scaffold(
       body: Container(
@@ -361,6 +361,15 @@ class _GroupDetailsState extends State<GroupDetailsView> {
               ),
             ),
           ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        child: RectangleButtonWithArrow(
+          onPressed: () {},
+          text: 'Join this group',
+          mainColor: const Color.fromRGBO(49, 75, 206, 1),
         ),
       ),
     );
