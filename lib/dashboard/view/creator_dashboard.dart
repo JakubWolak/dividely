@@ -525,29 +525,36 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                   shrinkWrap: true,
                   itemCount: 10,
                   itemBuilder: (context, i) {
-                    return Container(
-                      width: 140,
-                      height: 160,
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 10,
-                      ),
-                      alignment: Alignment.bottomLeft,
-                      decoration: BoxDecoration(
-                        image: const DecorationImage(
-                          image:
-                              AssetImage('assets/images/temporary/netflix.png'),
-                          fit: BoxFit.cover,
-                          opacity: 0.45,
-                        ),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const Text(
-                        'Netflix',
-                        style: TextStyle(
-                          fontFamily: 'GilroyBold',
-                          fontSize: 20,
-                          color: Colors.white,
+                    return Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: () => print('elo elo'),
+                        child: Container(
+                          width: 140,
+                          height: 160,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 20,
+                            vertical: 10,
+                          ),
+                          alignment: Alignment.bottomLeft,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: AssetImage(
+                                'assets/images/temporary/netflix.png',
+                              ),
+                              fit: BoxFit.cover,
+                              opacity: 0.65,
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: const Text(
+                            'Netflix',
+                            style: TextStyle(
+                              fontFamily: 'GilroyBold',
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                       ),
                     );

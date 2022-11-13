@@ -347,6 +347,7 @@ class _MemberDashboardState extends State<MemberDashboardView> {
                   ListView.separated(
                     shrinkWrap: true,
                     itemCount: 4,
+                    physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, _) {
                       return Row(
                         children: [
