@@ -21,7 +21,6 @@ class _MemberDashboardState extends State<MemberDashboardView> {
         child: ListView(
           physics: const BouncingScrollPhysics(),
           shrinkWrap: true,
-          reverse: true,
           padding: const EdgeInsets.symmetric(vertical: 60),
           children: [
             Padding(
@@ -423,7 +422,7 @@ class _MemberDashboardState extends State<MemberDashboardView> {
                 ],
               ),
             ),
-          ].reversed.toList(),
+          ],
         ),
       ),
     );

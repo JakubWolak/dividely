@@ -598,19 +598,7 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                         color: Colors.transparent,
                         child: InkWell(
                           borderRadius: BorderRadius.circular(10),
-                          onTap: () =>
-                              ScaffoldMessenger.of(context).showMaterialBanner(
-                            MaterialBanner(
-                              content: const Text('elo elo'),
-                              actions: [
-                                GestureDetector(
-                                  child: const Text('Close'),
-                                  onTap: () => ScaffoldMessenger.of(context)
-                                      .clearMaterialBanners(),
-                                ),
-                              ],
-                            ),
-                          ),
+                          onTap: () => print('nooo elo elo'),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(vertical: 9),
                             child: Row(
