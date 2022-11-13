@@ -527,8 +527,15 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                   itemBuilder: (context, i) {
                     return Material(
                       color: Colors.transparent,
+                      animationDuration: const Duration(milliseconds: 250),
                       child: InkWell(
                         onTap: () => print('elo elo'),
+                        splashColor: const Color.fromRGBO(
+                          255,
+                          137,
+                          126,
+                          0.5,
+                        ),
                         child: Container(
                           width: 140,
                           height: 160,
@@ -587,89 +594,98 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                     itemCount: 4,
                     physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, _) {
-                      return InkWell(
-                        onTap: () =>
-                            ScaffoldMessenger.of(context).showMaterialBanner(
-                          MaterialBanner(
-                            content: const Text('elo elo'),
-                            actions: [
-                              GestureDetector(
-                                child: const Text('Close'),
-                                onTap: () => ScaffoldMessenger.of(context)
-                                    .clearMaterialBanners(),
-                              ),
-                            ],
-                          ),
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                boxShadow: const [
-                                  BoxShadow(
-                                    offset: Offset(0, 4),
-                                    blurRadius: 12,
-                                    color: Color.fromRGBO(49, 75, 206, 0.3),
-                                  ),
-                                ],
-                                color: Colors.white,
-                              ),
-                              height: 54,
-                              width: 54,
-                              child: const Image(
-                                image: AssetImage(
-                                  'assets/images/temporary/spotify.png',
+                      return Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(10),
+                          onTap: () =>
+                              ScaffoldMessenger.of(context).showMaterialBanner(
+                            MaterialBanner(
+                              content: const Text('elo elo'),
+                              actions: [
+                                GestureDetector(
+                                  child: const Text('Close'),
+                                  onTap: () => ScaffoldMessenger.of(context)
+                                      .clearMaterialBanners(),
                                 ),
-                                opacity: AlwaysStoppedAnimation<double>(0.8),
-                              ),
+                              ],
                             ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
-                                  Text(
-                                    'Spotify Premium',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500,
-                                      fontFamily: 'Inter',
-                                      color: Colors.black87,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 9),
+                            child: Row(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    boxShadow: const [
+                                      BoxShadow(
+                                        offset: Offset(0, 4),
+                                        blurRadius: 12,
+                                        color: Color.fromRGBO(49, 75, 206, 0.3),
+                                      ),
+                                    ],
+                                    color: Colors.white,
+                                  ),
+                                  height: 54,
+                                  width: 54,
+                                  child: const Image(
+                                    image: AssetImage(
+                                      'assets/images/temporary/spotify.png',
                                     ),
+                                    opacity:
+                                        AlwaysStoppedAnimation<double>(0.8),
                                   ),
-                                  SizedBox(
-                                    height: 6,
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: const [
+                                      Text(
+                                        'Spotify Premium',
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
+                                          fontFamily: 'Inter',
+                                          color: Colors.black87,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 6,
+                                      ),
+                                      Text(
+                                        '23rd march 2022',
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontFamily: 'Inter',
+                                          color: Colors.black54,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  Text(
-                                    '23rd march 2022',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      fontFamily: 'Inter',
-                                      color: Colors.black54,
-                                    ),
+                                ),
+                                const Text(
+                                  r'12.5$',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.black87,
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
-                            const Text(
-                              r'12.5$',
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w700,
-                                color: Colors.black87,
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
                       );
                     },
                     separatorBuilder: (context, _) {
                       return const SizedBox(
-                        height: 24,
+                        height: 6,
                       );
                     },
                   ),
