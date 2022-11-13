@@ -1,4 +1,5 @@
 import 'package:dividely/app/router/app_router.dart';
+import 'package:dividely/app/router/boarding_guard.dart';
 import 'package:dividely/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -6,7 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 class App extends StatelessWidget {
   App({super.key});
 
-  final _appRouter = AppRouter();
+  final _appRouter = AppRouter(boardingGuard: BoardingGuard());
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dividely/common_widgets/buttons/small_blue_button.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RequestSentView extends StatelessWidget {
   const RequestSentView({super.key});
@@ -48,8 +49,11 @@ class RequestSentView extends StatelessWidget {
               width: 190,
               child: SmallBlueButton(
                 text: 'Homepage',
-                onPressed: () =>
-                    context.router.pushNamed('/creator-dashboard-view'),
+                onPressed: () => SharedPreferences.getInstance().then(
+                  (pref) => pref.getBool('isCreator') ?? false
+                      ? context.router.pushNamed('/creator-dashboard-view')
+                      : context.router.pushNamed('/member-dashboard-view'),
+                ),
               ),
             ),
           ],

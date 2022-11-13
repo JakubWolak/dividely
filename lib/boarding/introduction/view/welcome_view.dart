@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dividely/common_widgets/buttons/white_continue_button.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({super.key});
@@ -50,9 +51,13 @@ class WelcomeView extends StatelessWidget {
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 30),
         child: WhiteContinueButton(
-          onPressed: () => context.router.pushNamed(
-            '/register-view',
-          ),
+          onPressed: () => SharedPreferences.getInstance()
+              .then((pref) => pref.setBool('boardingFinished', true))
+              .then(
+                (_) => context.router.pushNamed(
+                  '/register-view',
+                ),
+              ),
         ),
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dividely/common_widgets/buttons/shadow_icon_button.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CreatorDashboardView extends StatefulWidget {
   const CreatorDashboardView({super.key});
@@ -145,7 +146,6 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
         child: ListView(
           physics: const BouncingScrollPhysics(),
           shrinkWrap: true,
-          reverse: true,
           padding: const EdgeInsets.symmetric(vertical: 60),
           children: [
             Padding(
@@ -669,8 +669,17 @@ class _CreatorDashboardState extends State<CreatorDashboardView> {
                 ],
               ),
             ),
-          ].reversed.toList(),
+          ],
         ),
+      ),
+      floatingActionButton: TextButton(
+        child: const Text('RESET APP SHARED PREFS'),
+        onPressed: () async {
+          final prefs = await SharedPreferences.getInstance();
+          await prefs.clear();
+
+          await context.router.pushNamed('/');
+        },
       ),
     );
   }

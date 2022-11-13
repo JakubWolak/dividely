@@ -3,6 +3,7 @@ import 'package:dividely/common_widgets/buttons/big_button.dart';
 import 'package:dividely/common_widgets/buttons/login_method_button.dart';
 import 'package:dividely/common_widgets/inputs/text_input.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -16,7 +17,7 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         height: MediaQuery.of(context).size.height,
         child: ListView(
@@ -126,8 +127,11 @@ class _LoginViewState extends State<LoginView> {
             ),
             BigButton(
               text: 'Log In',
-              onPressed: () =>
-                  context.router.pushNamed('/creator-dashboard-view'),
+              onPressed: () => SharedPreferences.getInstance().then(
+                (pref) => pref.getBool('isCreator') ?? false
+                    ? context.router.pushNamed('/creator-dashboard-view')
+                    : context.router.pushNamed('/member-dashboard-view'),
+              ),
               primaryColor: ButtonColor.orange,
             ),
             const SizedBox(

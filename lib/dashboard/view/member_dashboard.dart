@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dividely/common_widgets/buttons/shadow_icon_button.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MemberDashboardView extends StatefulWidget {
   const MemberDashboardView({super.key});
@@ -105,9 +107,16 @@ class _MemberDashboardState extends State<MemberDashboardView> {
                                     width: 40,
                                   ),
                                   TextButton(
-                                    onPressed: () {},
-                                    child: const Text('Become creator'),
+                                    onPressed: () async {
+                                      final prefs =
+                                          await SharedPreferences.getInstance();
+                                      await prefs.setBool('isCreator', true);
+
+                                      await context.router
+                                          .pushNamed('/creator-dashboard-view');
+                                    },
                                     style: TextButton.styleFrom(),
+                                    child: const Text('Become creator'),
                                   ),
                                 ],
                               ),
@@ -161,7 +170,8 @@ class _MemberDashboardState extends State<MemberDashboardView> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () =>
+                                context.router.pushNamed('/join-group-view'),
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               backgroundColor:
@@ -301,7 +311,14 @@ class _MemberDashboardState extends State<MemberDashboardView> {
                         ),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: const Text('Netflix'),
+                      child: const Text(
+                        'Netflix',
+                        style: TextStyle(
+                          fontFamily: 'GilroyBold',
+                          fontSize: 20,
+                          color: Colors.white,
+                        ),
+                      ),
                     );
                   },
                   separatorBuilder: (_, __) {

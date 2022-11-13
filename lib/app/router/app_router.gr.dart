@@ -13,7 +13,12 @@
 part of 'app_router.dart';
 
 class _$AppRouter extends RootStackRouter {
-  _$AppRouter([GlobalKey<NavigatorState>? navigatorKey]) : super(navigatorKey);
+  _$AppRouter({
+    GlobalKey<NavigatorState>? navigatorKey,
+    required this.boardingGuard,
+  }) : super(navigatorKey);
+
+  final BoardingGuard boardingGuard;
 
   @override
   final Map<String, PageFactory> pagesMap = {
@@ -102,6 +107,7 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(
           InitialViewRoute.name,
           path: '/',
+          guards: [boardingGuard],
         ),
         RouteConfig(
           IntroductionViewRoute.name,
