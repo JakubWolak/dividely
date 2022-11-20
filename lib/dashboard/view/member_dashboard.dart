@@ -170,7 +170,7 @@ class _MemberDashboardState extends State<MemberDashboardView> {
                         children: [
                           ElevatedButton(
                             onPressed: () =>
-                                context.router.pushNamed('/join-group-view'),
+                                context.router.pushNamed('/scan-qr-code-view'),
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
                               backgroundColor:

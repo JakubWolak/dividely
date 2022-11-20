@@ -1,9 +1,8 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:dividely/common_widgets/buttons/rectangle_button_with_arrow.dart';
+import 'package:dividely/common_widgets/buttons/shadow_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-
-import '../../common_widgets/buttons/rectangle_button_with_arrow.dart';
-import '../../common_widgets/buttons/shadow_icon_button.dart';
 
 class ScanQrCodeView extends StatefulWidget {
   const ScanQrCodeView({super.key});
@@ -13,6 +12,8 @@ class ScanQrCodeView extends StatefulWidget {
 }
 
 class _ScanQrCodeState extends State<ScanQrCodeView> {
+  final key = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
